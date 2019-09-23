@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV CONFIG_JSON1=none CONFIG_JSON2=none UUID=91cb66ba-a373-43a0-8169-33d4eeaeb857 CONFIG_JSON3=none CERT_PEM=none KEY_PEM=none VER=v4.20.0
+ENV CONFIG_JSON1=none CONFIG_JSON2=none UUID=91cb66ba-a373-43a0-8169-33d4eeaeb857 CONFIG_JSON3=none CERT_PEM=none KEY_PEM=none VER=v4.20
 
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && mkdir -m 777 /v2raybin \
@@ -10,7 +10,7 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && chmod +x /v2raybin/v2ray \
  && rm -rf v2ray.zip \
  && chgrp -R 0 /v2raybin \
- && chmod -R g+rwX /v2raybin ```
+ && chmod -R g+rwX /v2raybin
  
 ADD entrypoint.sh /entrypoint.sh
 
